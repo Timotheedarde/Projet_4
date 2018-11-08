@@ -1,0 +1,19 @@
+a faire:
+
+- Namesspaces: namespace Timothee\Forteroche\
+
+- cryptage mots de passe admin
+- espace admin : ajout et modification de billet
+
+- nouvelle table commentaire_report(com signalés)
+- fonction de récuperation de commentaire signalés
+
+- fonction lecture et supression de commentaire signalés dans l'espace d'admin
+
+- faire présentation pour expliquer chaque class et fonctionnement du framework (googleSlide)
+
+
+
+comment faire:
+
+- mise a jour d'un billet, on récupère le contenu dans une zone de texte modifiable? puis un bouton permet de remplacer le contenu du billet dans la base de donnée
