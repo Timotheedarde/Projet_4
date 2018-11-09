@@ -1,27 +1,43 @@
-<?php $this->titre = "Mon Blog - " . $this->nettoyer($billet['titre']); ?>
+<?php $this->titre = "Billet simple pour l'Alaska - " . $this->nettoyer($billet['titre']); ?>
+
 
 <article>
-    <header>
-        <h1 class="titreBillet"><?= $this->nettoyer($billet['titre']) ?></h1>
-        <time><?= $this->nettoyer($billet['date']) ?></time>
-    </header>
+    <div id="billetArticle">
+        <h3 class="titreBilletVueBillet"><?= $this->nettoyer($billet['titre']) ?></h3>
+    </div>
     <p><?= $this->nettoyer($billet['contenu']) ?></p>
+    <div id="datePubliBilletVueBillet">
+        <time>Date de publication : <?= $this->nettoyer($billet['date']) ?></time>
+    </div>
 </article>
+
 <hr />
-<header>
-    <h1 id="titreReponses">Réponses à <?= $this->nettoyer($billet['titre']) ?></h1>
-</header>
-<?php foreach ($commentaires as $commentaire): ?>
-    <p>Date: <?= $this->nettoyer($commentaire['date']) ?></p>
-    <p><?= $this->nettoyer($commentaire['auteur']) ?> dit :</p>
-    <p><?= $this->nettoyer($commentaire['contenu']) ?></p>
-<?php endforeach; ?>
-<hr />
-<form method="post" action="billet/commenter">
-    <input id="auteur" name="auteur" type="text" placeholder="Votre pseudo" 
-           required /><br />
-    <textarea id="txtCommentaire" name="contenu" rows="4" 
-              placeholder="Votre commentaire" required></textarea><br />
-    <input type="hidden" name="id" value="<?= $billet['id'] ?>" />
-    <input type="submit" value="Commenter" />
-</form>
+
+<article>
+    <div id="commentaireArticle">
+        <h3 id="titreCommentairesVueBillet">Commentaires du <?= $this->nettoyer($billet['titre']) ?></h3>
+        <div id="caseCommentaireVueBillet">
+            <?php foreach ($commentaires as $commentaire): ?>
+                <p><?= $this->nettoyer($commentaire['date']) ?> - <?= $this->nettoyer($commentaire['auteur']) ?> dit:</p>
+                <p><?= $this->nettoyer($commentaire['contenu']) ?></p>
+                <button>Signaler ce commentaire</button>
+                <hr />
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+
+
+    <div id= "commentaireForm">
+        <h4 id="Commenter">Laissez un commentaire</h4>
+        <form method="post" action="billet/commenter">
+            <input id="auteur" name="auteur" type="text" placeholder="Votre pseudo" 
+                required /><br />
+            <textarea id="txtCommentaire" name="contenu" rows="10" 
+                    placeholder="Votre commentaire" required></textarea><br />
+            <input type="hidden" name="id" value="<?= $billet['id'] ?>" />
+            <input type="submit" value="Commenter" />
+        </form>
+    </div>
+
+</article>

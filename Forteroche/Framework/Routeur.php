@@ -3,14 +3,14 @@ require_once 'Controleur.php';
 require_once 'Requete.php';
 require_once 'Vue.php';
 
-/*
- * Classe de routage des requêtes entrantes.
-*/
+//////////////////////////////////////////////
+// Classe de routage des requêtes entrantes //
+//////////////////////////////////////////////
+
 class Routeur
 {
-    /*
-     * Méthode principale appelée par le contrôleur frontal
-     * Examine la requête et exécute l'action appropriée
+    /* Méthode principale appelée par le contrôleur frontal
+       Examine la requête et exécute l'action appropriée
     */
     public function routerRequete()
     {
@@ -27,14 +27,11 @@ class Routeur
         }
     }
 
-    /*
-     * Instancie le contrôleur approprié en fonction de la requête reçue
-     * 
-     * @param Requete $requete Requête reçue
-     * @return Instance d'un contrôleur
-     * @throws Exception Si la création du contrôleur échoue
+    /* Instancie le contrôleur approprié en fonction de la requête reçue
+     - @param Requete $requete Requête reçue
+     - @return Instance d'un contrôleur
+     - @throws Exception Si la création du contrôleur échoue
     */
-
     private function creerControleur(Requete $requete)
     {
         // Grâce à la redirection, toutes les URL entrantes sont du type :
@@ -61,13 +58,10 @@ class Routeur
         }
     }
 
-    /*
-     * Détermine l'action à exécuter en fonction de la requête reçue
-     * 
-     * @param Requete $requete Requête reçue
-     * @return string Action à exécuter
+    /* Détermine l'action à exécuter en fonction de la requête reçue
+     - @param Requete $requete Requête reçue
+     - @return string Action à exécuter
     */
-
     private function creerAction(Requete $requete)
     {
         $action = "index";  // Action par défaut
@@ -77,12 +71,9 @@ class Routeur
         return $action;
     }
 
-    /*
-     * Gère une erreur d'exécution (exception)
-     * 
-     * @param Exception $exception Exception qui s'est produite
+    /* Gère une erreur d'exécution (exception)
+     - @param Exception $exception Exception qui s'est produite
     */
-
     private function gererErreur(Exception $exception)
     {
         $vue = new Vue('erreur');

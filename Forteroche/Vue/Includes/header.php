@@ -1,0 +1,2 @@
+<a href=""><h1 id="titreBlog">Jean Forteroche - Blog d'auteur</h1></a>
+<p>Bienvenue sur mon carnet de route en ligne, ce blog vous permettra de suivre mes aventures dans mon nouveau roman, "Billet simple pour l'Alaska"</p>

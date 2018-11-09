@@ -1,23 +1,22 @@
 <?php
 require_once 'Configuration.php';
 
-/*
- * Classe modélisant une vue.
-*/
+///////////////////////////////
+// Classe modélisant une vue //
+///////////////////////////////
 
 class Vue
 {
-    /* Nom du fichier associé à la vue */
+    // Nom du fichier associé à la vue 
     private $fichier;
-    /* Titre de la vue (défini dans le fichier vue) */
+    // Titre de la vue (défini dans le fichier vue) 
     private $titre;
-    /*
-     * Constructeur
-     * 
-     * @param string $action Action à laquelle la vue est associée
-     * @param string $controleur Nom du contrôleur auquel la vue est associée
-    */
 
+    // CONSTRUCTEUR
+    /* 
+    - @param string $action Action à laquelle la vue est associée
+    - @param string $controleur Nom du contrôleur auquel la vue est associée 
+    */
     public function __construct($action, $controleur = "")
     {
         // Détermination du nom du fichier vue à partir de l'action et du constructeur
@@ -29,10 +28,9 @@ class Vue
         $this->fichier = $fichier . $action . ".php";
     }
 
+    // Génère et affiche la vue
     /*
-     * Génère et affiche la vue
-     * 
-     * @param array $donnees Données nécessaires à la génération de la vue
+     - @param array $donnees Données nécessaires à la génération de la vue
     */
     public function generer($donnees)
     {
@@ -49,15 +47,13 @@ class Vue
         echo $vue;
     }
 
+    // Génère un fichier vue et renvoie le résultat produit
     /*
-     * Génère un fichier vue et renvoie le résultat produit
-     * 
-     * @param string $fichier Chemin du fichier vue à générer
-     * @param array $donnees Données nécessaires à la génération de la vue
-     * @return string Résultat de la génération de la vue
-     * @throws Exception Si le fichier vue est introuvable
+     - @param string $fichier Chemin du fichier vue à générer
+     - @param array $donnees Données nécessaires à la génération de la vue
+     - @return string Résultat de la génération de la vue
+     - @throws Exception Si le fichier vue est introuvable
     */
-
     private function genererFichier($fichier, $donnees)
     {
         if (file_exists($fichier)) {
@@ -76,15 +72,13 @@ class Vue
         }
     }
     
+    // Nettoie une valeur insérée dans une page HTML
     /*
-     * Nettoie une valeur insérée dans une page HTML
-     * Doit être utilisée à chaque insertion de données dynamique dans une vue
-     * Permet d'éviter les problèmes d'exécution de code indésirable (XSS) dans les vues générées
-     * 
-     * @param string $valeur Valeur à nettoyer
-     * @return string Valeur nettoyée
+    Doit être utilisée à chaque insertion de données dynamique dans une vue
+    Permet d'éviter les problèmes d'exécution de code indésirable (XSS) dans les vues générées
+     - @param string $valeur Valeur à nettoyer
+     - @return string Valeur nettoyée
     */
-    
     private function nettoyer($valeur)
     {
         // Convertit les caractères spéciaux en entités HTML

@@ -1,16 +1,14 @@
 <?php
 require_once 'Framework/Modele.php';
 
-/*
- * Fournit les services d'accès aux genres musicaux 
-*/
+///////////////////////////////////////////
+// Fournit les services liés aux billets //
+///////////////////////////////////////////
 
 class Billet extends Modele {
     /* Renvoie la liste des billets du blog
-     * 
-     * @return PDOStatement La liste des billets
+     - @return PDOStatement La liste des billets
     */
-
     public function getBillets() {
         $sql = 'select BIL_ID as id, BIL_DATE as date,'
                 . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET'
@@ -20,12 +18,10 @@ class Billet extends Modele {
     }
     
     /* Renvoie les informations sur un billet
-     * 
-     * @param int $id L'identifiant du billet
-     * @return array Le billet
-     * @throws Exception Si l'identifiant du billet est inconnu
+     - @param int $id L'identifiant du billet
+     - @return array Le billet
+     - @throws Exception Si l'identifiant du billet est inconnu
     */
-
     public function getBillet($idBillet) {
         $sql = 'select BIL_ID as id, BIL_DATE as date,'
                 . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET'
@@ -37,12 +33,16 @@ class Billet extends Modele {
             throw new Exception("Aucun billet ne correspond à l'identifiant '$idBillet'");
     }
     
-    /*
-     * Renvoie le nombre total de billets
-     * 
-     * @return int Le nombre de billets
-    */
+    public function ajouterBillet($titre, $contenu) {
+        $sql = 'insert into T_BILLET(BIL_DATE, BIL_TITRE, BIL_CONTENU)'
+            . ' values(?, ?, ?, ?)';
+        $date = date('Y-m-d H:i:s'); //format de la date
+        $this->executerRequete($sql, array($date, $titre, $contenu));
+    }
 
+    /* Renvoie le nombre total de billets
+     - @return int Le nombre de billets
+    */
     public function getNombreBillets()
     {
         $sql = 'select count(*) as nbBillets from T_BILLET';

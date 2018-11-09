@@ -1,9 +1,9 @@
 <?php
 require_once 'Framework/Controleur.php';
 
-/*
- * Classe parente des contrôleurs soumis à authentification
-*/
+//////////////////////////////////////////////////////////////
+// Classe parente des contrôleurs soumis à authentification //
+//////////////////////////////////////////////////////////////
 
 abstract class ControleurSecurise extends Controleur
 {

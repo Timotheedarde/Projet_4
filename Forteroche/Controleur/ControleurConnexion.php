@@ -2,9 +2,9 @@
 require_once 'Framework/Controleur.php';
 require_once 'Modele/Utilisateur.php';
 
-/*
- * Contrôleur gérant la connexion au site
-*/
+////////////////////////////////////////////
+// Contrôleur gérant la connexion au site //
+////////////////////////////////////////////
 
 class ControleurConnexion extends Controleur
 {

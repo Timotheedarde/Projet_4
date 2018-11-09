@@ -1,23 +1,24 @@
 <!doctype html>
 <html lang="fr">
     <head>
-        <meta charset="UTF-8" />
-        <base href="<?= $racineWeb ?>" >
-        <link rel="stylesheet" href="public/css/style.css" />
-        <title><?= $titre ?></title>
+        <?php include("Vue/includes/head.php"); ?>
     </head>
+    
     <body>
         <div id="global">
-            <header>
-                <a href=""><h1 id="titreBlog">Mon Blog</h1></a>
-                <p>Je vous souhaite la bienvenue sur ce modeste blog.</p>
-            </header>
+            <nav class="navbar navbar-inverse">
+                <?php include("Vue/includes/nav.php"); ?>
+            </nav>
+            
             <div id="contenu">
                 <?= $contenu ?>
             </div> <!-- #contenu -->
             <footer id="piedBlog">
-                Blog réalisé avec PHP, HTML5 et CSS.
+                <?php include("Vue/includes/footer.php"); ?>
             </footer>
         </div> <!-- #global -->
     </body>
+    <div id="script">
+        <?php include("Vue/includes/script.php"); ?>
+    </div>
 </html>

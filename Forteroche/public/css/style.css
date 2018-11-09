@@ -6,46 +6,243 @@
    hauteur du «grand-père», et ainsi de suite.
    Pour pouvoir utiliser un "min-height: 100%" sur div#global, il nous faut:
    - un parent (body) en "height: 100%";
-   - le parent de body également en "height: 100%". */
-   html, body {
+   - le parent de body également en "height: 100%". 
+*/
+
+    /*/////////*/
+    /* GENERAL */
+    /*/////////*/
+
+html, body 
+{
     height: 100%;
 }
 
 body {
-    color: #bfbfbf;
-    background: black;
+    color: black;
+    background: rgb(63, 63, 63);
     font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
 }
 
-h1 {
-    color: white;
+
+h1 
+{
+    color: black;
+    border-bottom: 1px solid #ddd;
+    display: inline-block;
+    font-family: Georgia,"Bitstream Charter",serif;
+    font-size: 21px;
+    font-size: 2.1rem;
+    line-height: 1.15;
+    padding: 0 2.954209748892% .275em;
 }
 
-.titreBillet {
-    margin-bottom : 0px;
-}
 
-#global {
+#global 
+{
     min-height: 100%;  /* Voir commentaire sur html et body plus haut */
-    background: #333534;
+    background: #ddd;
     width: 70%;
     margin: auto;    /* Permet de centrer la div */
     text-align: justify;
     padding: 5px 20px;
 }
 
-#contenu {
+#contenu 
+{
     margin-bottom : 30px;
 }
 
-#titreBlog, #piedBlog {
+
+/*FOOTER*/
+#piedBlog 
+{
     text-align: center;
+    margin-top: 200px;
 }
 
-#titreReponses {
-    font-size : 100%;
+
+    /*/////////*/
+    /* ACCUEIL */
+    /*/////////*/
+
+
+#titreBlog
+{
+    font-size: 30px;
 }
 
-#txtCommentaire {
-    width: 50%;
+#messageAccueil > p
+{
+    font-size: 20px;
 }
+
+#homepageimg > img
+{
+    width: 100%;
+    height: 100%;
+}
+
+#titreListeBilletAccueil
+{
+    font-size: 25px;
+    color: white;
+    text-shadow: 0px 4px 4px black;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px black;
+    margin-top: 20px;
+    padding: 7px;
+    background-color:#717573;
+}
+
+#listeBilletAccueil > h3
+{
+    margin: auto;
+    
+}
+
+
+
+
+
+    /*////////*/
+    /* BILLET */
+    /*////////*/
+
+#billetArticle
+{
+    font-size: 40px;
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+#datePubliBilletVueBillet
+{
+    color: white;
+    font-size: 17px;
+    width: 24.5%;
+    background-color: rgb(63, 63, 63);
+    margin: auto;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#titreCommentairesVueBillet
+{
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+#caseCommentaireVueBillet
+{
+    background-color: white;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+#txtCommentaire
+{
+    width: 45%;
+}
+    /*////////*/
+    /* ADMIN */
+    /*////////*/
+
+#titreAdmin > h3
+{
+    font-size: 50px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#adminMessage > p
+{
+    font-size: 17px;
+    margin-left:25px;
+}
+
+#adminControl
+{
+    font-size: 20px;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    align-self: center;
+    align-items: center;
+    justify-content: space-between
+}
+
+#adminControl > p > span
+{
+    text-transform: uppercase;
+}
+
+#gestionBillet
+{
+    background-color: white;
+    padding: 15px;
+    margin:auto;
+    border-radius: 10px;
+}
+
+#ajouterUnbillet >h4
+{
+    font-size: 30px;
+    text-decoration: underline
+}
+
+#titreNouveauBillet
+{
+    width: 35%;
+    height: 30px;
+    display: block;
+    margin: auto;
+}
+
+#txtNouveauBillet
+{
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+#publierNouveauBillet
+{
+    width: 20%;
+    height: 30px;
+    display: block;
+    margin: auto;
+}
+
+#modifierUnbillet
+{
+    font-size: 30px;
+}
+
+#modifierUnbillet >h4
+{
+    font-size: 25px;
+    text-decoration: underline
+}
+
+
+
+#gestionCommentaire
+{
+    background-color: white;
+    padding: 15px;
+    margin:auto;
+    border-radius: 10px;
+}
+
+#SupprimerUnCommentaire >h4
+{
+    font-size: 25px;
+    text-decoration: underline
+}
+

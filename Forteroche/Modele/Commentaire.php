@@ -1,9 +1,10 @@
 <?php
 require_once 'Framework/Modele.php';
 
-/*
- * Fournit les services d'accès aux genres musicaux 
-*/
+///////////////////////////////////////////////
+// Fournit les services liés au commentaires //
+///////////////////////////////////////////////
+
 class Commentaire extends Modele {
 // Renvoie la liste des commentaires associés à un billet
     public function getCommentaires($idBillet) {
@@ -20,10 +21,8 @@ class Commentaire extends Modele {
         $this->executerRequete($sql, array($date, $auteur, $contenu, $idBillet));
     }
     
-    /*
-     * Renvoie le nombre total de commentaires
-     * 
-     * @return int Le nombre de commentaires
+    /* Renvoie le nombre total de commentaires
+     - @return int Le nombre de commentaires
     */
     public function getNombreCommentaires()
     {
