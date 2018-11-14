@@ -1,5 +1,7 @@
 <?php
-require_once 'Framework/Modele.php';
+namespace Modele;
+
+use Framework\Modele;
 
 ///////////////////////////////////////////////
 // Fournit les services liés au commentaires //

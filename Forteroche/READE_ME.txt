@@ -1,0 +1,14 @@
+a faire:
+
+- Cryptage mdp
+- menu administration avec vue/controlleur pour chaque tache
+
+- espace admin : ajout et modification de billet
+- fonction de récuperation de commentaire signalés en JS (Ajax)
+- fonction lecture et supression de commentaire signalés dans l'espace d'admin
+
+
+comment faire:
+
+- retour accueil quand ajout d'un chapitre
+

@@ -1,4 +1,5 @@
 <?php
+namespace Framework; 
 
 //////////////////////////////////////////////
 // Classe modélisant la session.            //
@@ -50,7 +51,7 @@ class Session
             return $_SESSION[$nom];
         }
         else {
-            throw new Exception("Attribut '$nom' absent de la session");
+            throw new \Exception("Attribut '$nom' absent de la session");
         }
     }
 }

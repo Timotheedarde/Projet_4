@@ -1,5 +1,7 @@
 <?php
-require_once 'Session.php';
+namespace Framework; 
+
+use Framework\Session;
 
 /////////////////////////////////////////////////
 // Classe modélisant une requête HTTP entrante //
@@ -50,7 +52,7 @@ class Requete
             return $this->parametres[$nom];
         }
         else {
-            throw new Exception("Paramètre '$nom' absent de la requête");
+            throw new \Exception("Paramètre '$nom' absent de la requête");
         }
     }
 }

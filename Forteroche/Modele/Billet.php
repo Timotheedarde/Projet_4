@@ -1,5 +1,7 @@
 <?php
-require_once 'Framework/Modele.php';
+namespace Modele;
+
+use Framework\Modele;
 
 ///////////////////////////////////////////
 // Fournit les services liés aux billets //
@@ -30,12 +32,12 @@ class Billet extends Modele {
         if ($billet->rowCount() > 0)
             return $billet->fetch();  // Accès à la première ligne de résultat
         else
-            throw new Exception("Aucun billet ne correspond à l'identifiant '$idBillet'");
+            throw new \Exception("Aucun billet ne correspond à l'identifiant '$idBillet'");
     }
     
     public function ajouterBillet($titre, $contenu) {
         $sql = 'insert into T_BILLET(BIL_DATE, BIL_TITRE, BIL_CONTENU)'
-            . ' values(?, ?, ?, ?)';
+            . ' values(?, ?, ?)';
         $date = date('Y-m-d H:i:s'); //format de la date
         $this->executerRequete($sql, array($date, $titre, $contenu));
     }

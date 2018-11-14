@@ -29,7 +29,7 @@
 
 
     <div id= "commentaireForm">
-        <h4 id="Commenter">Laissez un commentaire</h4>
+        <h4 id="Commenter">Laisser un commentaire</h4>
         <form method="post" action="billet/commenter">
             <input id="auteur" name="auteur" type="text" placeholder="Votre pseudo" 
                 required /><br />

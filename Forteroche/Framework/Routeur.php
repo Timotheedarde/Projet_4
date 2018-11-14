@@ -1,7 +1,10 @@
 <?php
-require_once 'Controleur.php';
-require_once 'Requete.php';
-require_once 'Vue.php';
+namespace Framework; 
+
+use Framework\Controleur;
+use Framework\Requete;
+use Framework\Vue;
+
 
 //////////////////////////////////////////////
 // Classe de routage des requêtes entrantes //
@@ -48,13 +51,13 @@ class Routeur
         $fichierControleur = "Controleur/" . $classeControleur . ".php";
         if (file_exists($fichierControleur)) {
             // Instanciation du contrôleur adapté à la requête
-            require($fichierControleur);
+            $classeControleur = 'Controleur\\' . $classeControleur;
             $controleur = new $classeControleur();
             $controleur->setRequete($requete);
             return $controleur;
         }
         else {
-            throw new Exception("Fichier '$fichierControleur' introuvable");
+            throw new \Exception("Fichier '$fichierControleur' introuvable");
         }
     }
 

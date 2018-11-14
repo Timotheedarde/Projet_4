@@ -1,6 +1,9 @@
 <?php
-require_once 'Framework/Controleur.php';
-require_once 'Modele/Utilisateur.php';
+namespace Controleur;
+
+use Framework\Controleur;
+use Modele\Utilisateur;
+
 
 ////////////////////////////////////////////
 // Contrôleur gérant la connexion au site //
@@ -35,7 +38,7 @@ class ControleurConnexion extends Controleur
                         "index");
         }
         else
-            throw new Exception("Action impossible : login ou mot de passe non défini");
+            throw new \Exception("Action impossible : login ou mot de passe non défini");
     }
     public function deconnecter()
     {

@@ -1,7 +1,9 @@
 <?php
-require_once 'Configuration.php';
-require_once 'Requete.php';
-require_once 'Vue.php';
+namespace Framework; 
+
+use Framework\Configuration;
+use Framework\Requete;
+use Framework\Vue;
 
 //////////////////////////////////////////////////////////////////////
 // Classe abstraite contrôleur.                                     //
@@ -35,7 +37,7 @@ abstract class Controleur
         }
         else {
             $classeControleur = get_class($this);
-            throw new Exception("Action '$action' non définie dans la classe $classeControleur");
+            throw new \Exception("Action '$action' non définie dans la classe $classeControleur");
         }
     }
 

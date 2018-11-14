@@ -1,7 +1,9 @@
 <?php
-require_once 'Framework/Controleur.php';
-require_once 'Modele/Billet.php';
-require_once 'Modele/Commentaire.php';
+namespace Controleur;
+
+use Framework\Controleur;
+use Modele\Billet;
+use Modele\Commentaire;
 
 //////////////////////////////////////////////
 // Contrôleur des actions liées aux billets //
@@ -45,6 +47,6 @@ class ControleurBillet extends Controleur {
         
         $this->billet->ajouterBillet($titre, $contenu);
         // Exécution de l'action par défaut pour réafficher la liste des billets
-        $this->executerAction("index");
+        $this->executerAction("index"); /* utiliser header pour rediriger vers une nouvelle page liste billet admin */
     }
 }

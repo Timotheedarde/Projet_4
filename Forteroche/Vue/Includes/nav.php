@@ -9,6 +9,6 @@
 </ul>
 <ul class="nav navbar-nav navbar-right">
     <!--<li><a href="#"><span class="glyphicon glyphicon-user"></span> S'enregistrer</a></li>-->
-    <li><a href="<?= "connexion" ?>"><span class="glyphicon glyphicon-log-in"></span> Se Connecter</a></li>
+    <li><a href="<?= "admin" ?>"><span class="glyphicon glyphicon-log-in"></span> Administration</a></li>
 </ul>
 </div>

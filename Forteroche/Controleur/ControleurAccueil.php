@@ -1,7 +1,9 @@
 <?php
+namespace Controleur;
 
-require_once 'Framework/Controleur.php';
-require_once 'Modele/Billet.php';
+use Framework\Controleur;
+use Modele\Billet;
+
 class ControleurAccueil extends Controleur {
     private $billet;
     public function __construct() {
@@ -13,3 +15,4 @@ class ControleurAccueil extends Controleur {
         $this->genererVue(array('billets' => $billets));
     }
 }
+

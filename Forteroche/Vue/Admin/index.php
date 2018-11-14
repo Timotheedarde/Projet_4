@@ -14,36 +14,10 @@
 
 <hr />
 
-<section id="gestionBillet">
+<h4 id="titreOption">Options d'administration</h4>
 
-    <div id="ajouterUnbillet">
-        <h4>Publier un nouveau Chapitre</h4>
-        <form method="post" action="billet/poster">
-            <input id="titreNouveauBillet" name="titre" placeholder="Titre du chapitre" /><br />
-            <textarea   id="txtNouveauBillet" name="contenu" rows="30" 
-                        placeholder="Votre texte" required></textarea><br />
-            <input id="publierNouveauBillet" type="submit" value="Publier" />
-        </form>
-    </div>
-
-
-
-    <div id="modifierUnbillet">
-        <h4>Liste des chapitres en ligne</h4>
-        <div id="listebillets">
-        </div> 
-    </div>
-
-</section>
-
-<hr />
-
-<section id="gestionCommentaire">
-
-    <div id="SupprimerUnCommentaire">
-        <h4>Listes de commentaires signalés</h4>
-        <div id="listeCommentaires">
-        </div>
-    </div>
-
+<section id="MenuAdmin">
+    <a href="<?= "adminnouveauposte" ?>"><h5>Ajouter un Chapitre</h5></a>
+    <a href="<?= "adminmodifierchapitre" ?>"><h5>Modifier un Chapitre</h5></a>
+    <a href="<?= "adminmoderation" ?>"><h5>Modération des commentaires</h5></a>
 </section>

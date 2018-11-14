@@ -13,15 +13,18 @@
 <div id="titreListeBilletAccueil">
     <h3>Retrouvez les derniers chapitres de l'aventure</h3>
 </div>
-<?php foreach ($billets as $billet):
-    ?>
-    <article>
-        <div id="affichageBillet">
-            <a href="<?= "billet/index/" . $this->nettoyer($billet['id']) ?>">
-                <h3 class="titreBilletAccueil"><?= $this->nettoyer($billet['titre']) ?></h3>
-            </a>
-            <time>Date de publication: <?= $this->nettoyer($billet['date']) ?></time>
-        </div>
-    </article>
-    <hr />
-<?php endforeach; ?>
+
+<section id="listeBilletAccueil">
+    <?php foreach ($billets as $billet):
+        ?>
+        <article>
+            <div id="affichageBillet">
+                <a href="<?= "billet/index/" . $this->nettoyer($billet['id']) ?>">
+                    <h3 class="titreBilletAccueil"><?= $this->nettoyer($billet['titre']) ?></h3>
+                </a>
+                <time>Date de publication: <?= $this->nettoyer($billet['date']) ?></time>
+            </div>
+        </article>
+        <hr />
+    <?php endforeach; ?>
+</section>

@@ -1,5 +1,7 @@
 <?php
-require_once 'Framework/Modele.php';
+namespace Modele;
+
+use Framework\Modele;
 
 /////////////////////////////////////
 // Modélise un utilisateur du blog //
@@ -33,7 +35,7 @@ class Utilisateur extends Modele {
         if ($utilisateur->rowCount() == 1){
             return $utilisateur->fetch();  // Accès à la première ligne de résultat
         }else {
-            throw new Exception("Aucun utilisateur ne correspond aux identifiants fournis");
+            throw new \Exception("Aucun utilisateur ne correspond aux identifiants fournis");
         }
     }
 }
