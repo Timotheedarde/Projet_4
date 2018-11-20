@@ -18,8 +18,8 @@
         <h3 id="titreCommentairesVueBillet">Commentaires du <?= $this->nettoyer($billet['titre']) ?></h3>
         <div id="caseCommentaireVueBillet">
             <?php foreach ($commentaires as $commentaire): ?>
-                <p><?= $this->nettoyer($commentaire['date']) ?> - <?= $this->nettoyer($commentaire['auteur']) ?> dit:</p>
-                <p><?= $this->nettoyer($commentaire['contenu']) ?></p>
+                <span><?= $this->nettoyer($commentaire['date']) ?> - <?= $this->nettoyer($commentaire['auteur']) ?> dit:</span>
+                <div id="contenuCom"><?= $this->nettoyer($commentaire['contenu']) ?></div id="conenuCom">
                 <button>Signaler ce commentaire</button>
                 <hr />
             <?php endforeach; ?>

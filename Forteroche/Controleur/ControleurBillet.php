@@ -5,6 +5,7 @@ use Framework\Controleur;
 use Modele\Billet;
 use Modele\Commentaire;
 
+
 //////////////////////////////////////////////
 // Contrôleur des actions liées aux billets //
 //////////////////////////////////////////////
@@ -38,15 +39,5 @@ class ControleurBillet extends Controleur {
         $this->commentaire->ajouterCommentaire($auteur, $contenu, $idBillet);
         // Exécution de l'action par défaut pour réafficher la liste des billets
         $this->executerAction("index");
-    }
-
-    // Ajoute un nouveau billet
-    public function poster() {
-        $titre = $this->requete->getParametre("titre");
-        $contenu = $this->requete->getParametre("contenu");
-        
-        $this->billet->ajouterBillet($titre, $contenu);
-        // Exécution de l'action par défaut pour réafficher la liste des billets
-        $this->executerAction("index"); /* utiliser header pour rediriger vers une nouvelle page liste billet admin */
     }
 }

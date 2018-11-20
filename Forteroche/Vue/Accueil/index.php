@@ -3,7 +3,7 @@
 <header id="messageAccueil">
     <a href=""><h1 id="titreBlog">Jean Forteroche - Blog d'auteur</h1></a>
     <p>Bienvenue sur mon carnet de route en ligne, ce blog vous permettra de suivre 
-    les aventures de mon nouveau roman, <span>"Billet simple pour l'Alaska"</span></p>
+    les aventures de mon nouveau roman:<br> <span>Billet simple pour l'Alaska</span></p>
 </header>
 
 <figure id="homepageimg">

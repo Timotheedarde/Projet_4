@@ -35,6 +35,7 @@ class Billet extends Modele {
             throw new \Exception("Aucun billet ne correspond à l'identifiant '$idBillet'");
     }
     
+    //Ajouter un billet à la BDD
     public function ajouterBillet($titre, $contenu) {
         $sql = 'insert into T_BILLET(BIL_DATE, BIL_TITRE, BIL_CONTENU)'
             . ' values(?, ?, ?)';
@@ -45,8 +46,7 @@ class Billet extends Modele {
     /* Renvoie le nombre total de billets
      - @return int Le nombre de billets
     */
-    public function getNombreBillets()
-    {
+    public function getNombreBillets(){
         $sql = 'select count(*) as nbBillets from T_BILLET';
         $resultat = $this->executerRequete($sql);
         $ligne = $resultat->fetch();  // Le résultat comporte toujours 1 ligne

@@ -75,6 +75,11 @@ h1
     font-size: 20px;
 }
 
+#messageAccueil > p > span
+{
+    font-size: 30px;
+}
+
 #homepageimg > img
 {
     width: 100%;
@@ -95,6 +100,10 @@ h1
     background-color:#717573;
 }
 
+#affichageBillet > time
+{
+    font-weight: bold;
+}
 
     /*////////*/
     /* BILLET */
@@ -112,7 +121,6 @@ h1
     font-size: 40px;
     text-align: center;
     text-decoration: underline;
-
 }
 
 #datePubliBilletVueBillet time
@@ -125,13 +133,22 @@ h1
     margin: auto;
     padding: 5px;
     border-radius: 10px;
-
 }
 
 #titreCommentairesVueBillet
 {
     font-size: 30px;
     text-decoration: underline;
+}
+
+#caseCommentaireVueBillet > span
+{
+    font-weight: bold;
+}
+
+#contenuCom
+{
+    margin: 5px;
 }
 
 #caseCommentaireVueBillet
@@ -239,10 +256,65 @@ h1
     font-size: 30px;
 }
 
-#modifierUnbillet >h4
+#modifierUnbillet > h4
 {
     font-size: 25px;
     text-decoration: underline
+}
+
+#listeBilletAdmin
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#affichageBilletAdmin > h3
+{
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#affichageBilletAdmin > time
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+#titreDuChapitreMAJ
+{
+    color: white;
+    border: 2px solid white;
+    background-color: #717573;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px;
+}
+
+#modifierTitre
+{
+    width: 35%;
+    height: 40px;
+    display: block;
+    margin: auto;
+}
+
+#modifierTexte
+{
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+#updateChapitre
+{
+    width: 30%;
+    height: 50px;
+    display: block;
+    margin: auto;
 }
 
     /*//////////////////*/

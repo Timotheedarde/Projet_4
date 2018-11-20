@@ -2,7 +2,7 @@
 
 <div id="ajouterUnbillet">
         <h4>Publier un nouveau Chapitre</h4>
-        <form method="post" action="billet/poster">
+        <form method="post" action="adminnouveauposte/poster">
             <input id="titreNouveauBillet" name="titre" placeholder="Titre du chapitre" /><br />
             <textarea   id="txtNouveauBillet" name="contenu" rows="30" 
                         placeholder="Votre texte" required></textarea><br />
