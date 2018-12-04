@@ -11,10 +11,10 @@ class Configuration
     // Tableau des paramètres de configuration 
     private static $parametres;
 
-    /* Renvoie la valeur d'un paramètre de configuration
-     - @param string $nom Nom du paramètre
-     - @param string $valeurParDefaut Valeur à renvoyer par défaut
-     - @return string Valeur du paramètre
+    /** Renvoie la valeur d'un paramètre de configuration
+     * @param string $nom Nom du paramètre
+     * @param string $valeurParDefaut Valeur à renvoyer par défaut
+     * @return string Valeur du paramètre
     */
     public static function get($nom, $valeurParDefaut = null)
     {
@@ -28,10 +28,10 @@ class Configuration
         return $valeur;
     }
     
-    /* Renvoie le tableau des paramètres en le chargeant au besoin depuis un fichier de configuration.
-      Les fichiers de configuration recherchés sont Config/dev.ini et Config/prod.ini (dans cet ordre)
-     - @return array Tableau des paramètres
-     - @throws Exception Si aucun fichier de configuration n'est trouvé
+    /** Renvoie le tableau des paramètres en le chargeant au besoin depuis un fichier de configuration.
+      *Les fichiers de configuration recherchés sont Config/dev.ini et Config/prod.ini (dans cet ordre)
+     * @return array Tableau des paramètres
+     * @throws \Exception Si aucun fichier de configuration n'est trouvé
     */
     private static function getParametres()
     {

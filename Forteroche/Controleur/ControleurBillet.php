@@ -23,21 +23,30 @@ class ControleurBillet extends Controleur {
     // Affiche les détails sur un billet
     public function index() {
         $idBillet = $this->requete->getParametre("id");
-        
+        $billets = $this->billet->getBillets();
         $billet = $this->billet->getBillet($idBillet);
         $commentaires = $this->commentaire->getCommentaires($idBillet);
         
-        $this->genererVue(array('billet' => $billet, 'commentaires' => $commentaires));
+        $this->genererVue(array('billets' => $billets, 'billet' => $billet, 'commentaires' => $commentaires));
     }
 
-    // Ajoute un commentaire sur un billet
+    // Ajoute un commentaire sur un billet ****
     public function commenter() {
         $idBillet = $this->requete->getParametre("id");
         $auteur = $this->requete->getParametre("auteur");
         $contenu = $this->requete->getParametre("contenu");
         
-        $this->commentaire->ajouterCommentaire($auteur, $contenu, $idBillet);
+        $commentaire = $this->commentaire->ajouterCommentaire($auteur, $contenu, $idBillet);
         // Exécution de l'action par défaut pour réafficher la liste des billets
-        $this->executerAction("index");
+        $this-> genererVue(['commentaire' => $commentaire ], null, false);
+    }
+
+    // Signaler un commentaire sur un billet ****
+    public function signaler() {
+        $report = $this->requete->getParametre("report");
+        
+        $this->commentaire->reportCommentaire($report);
+        // Exécution de l'action par défaut pour réafficher la liste des billets
+        $this-> genererVue(['commentaire' => $commentaire ], null, false);
     }
 }

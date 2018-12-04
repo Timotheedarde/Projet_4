@@ -1,10 +1,10 @@
-<?php $this->titre = "Mon Blog - Connexion" ?>
+<?php $this->titre = "Billet simple pour l'Alaska - Connexion Administrateur" ?>
 
 <p>Vous devez être connecté pour accéder à cette zone.</p>
 
 <form action="connexion/connecter" method="post">
-    <input name="login" type="text" placeholder="Entrez votre login" required autofocus>
-    <input name="mdp" type="password" placeholder="Entrez votre mot de passe" required>
+    <input name="login" type="text" placeholder="Login" required autofocus>
+    <input name="mdp" type="password" placeholder="Mot de passe" required>
     <button type="submit">Connexion</button>
 </form>
 

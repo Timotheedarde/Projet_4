@@ -30,4 +30,40 @@ class ControleurAdmin extends ControleurSecurise
         $this->genererVue(array('billets' => $billets, 'nbBillets' => $nbBillets, 'nbCommentaires' => $nbCommentaires, 'login' => $login));
     }
 
+    // Ajoute nouveau billet
+    public function publier() {
+        $titre = $this->requete->getParametre("titre");
+        $contenu = $this->requete->getParametre("contenu");
+        if(!empty($titre) && !empty($contenu)){
+            $this->billet->ajouterBillet($titre, $contenu);
+            // Exécution de l'action par défaut pour réafficher la liste des billets
+            $this->rediriger('admin');
+        }
+        $this->generervue();
+    }
+
+    // Mise à jour d'un billet ****
+    public function update(){
+        $titre = $this->requete->getParametre($titre);
+        $contenu = $this->requete->getParametre($contenu);
+        
+        
+        $this->generervue();
+    }
+
+    // Suppression d'un billet ****
+    public function delete(){
+        $id = $this->requete->getParametre($id);
+        $this->id->supprimerBillet('id');
+        $this->rediriger('admin');
+        $this->generervue();
+    }
+
+    // Moderation (suppression de commentaire) ****
+    public function moderer() {
+
+        $this->generervue();
+    }
+        
+
 }

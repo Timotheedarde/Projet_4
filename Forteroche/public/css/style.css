@@ -20,7 +20,7 @@ html, body
 
 body {
     color: black;
-    background: rgb(63, 63, 63);
+    background: #337ab7;
     font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
 }
 
@@ -36,7 +36,7 @@ h1
     padding: 0 2.954209748892% .275em;
 }
 
-#global 
+.global 
 {
     min-height: 100%;  /* Voir commentaire sur html et body plus haut */
     background: #ddd;
@@ -46,7 +46,7 @@ h1
     padding: 5px 20px;
 }
 
-#contenu 
+.contenu 
 {
     margin-bottom : 30px;
 }
@@ -55,7 +55,7 @@ h1
     /* FOOTER */
     /*////////*/
 
-#piedBlog 
+.piedBlog 
 {
     text-align: center;
     margin-top: 200px;
@@ -70,26 +70,25 @@ h1
     font-size: 30px;
 }
 
-#messageAccueil > p
+.messageAccueil > p
 {
     font-size: 20px;
 }
 
-#messageAccueil > p > span
+.messageAccueil > p > span
 {
     font-size: 30px;
 }
 
-#homepageimg > img
+.homepageimg > img
 {
     width: 100%;
     height: 100%;
 }
 
-#titreListeBilletAccueil
+.titreListeBilletAccueil
 {
-    font-size: 25px;
-    color: white;
+
     text-shadow: 0px 4px 4px black;
     text-align: center;
     border: 2px solid white;
@@ -97,10 +96,18 @@ h1
     box-shadow: 4px 4px 4px black;
     margin: 20px;
     padding: 7px;
-    background-color:#717573;
+    background-color:rgba(97, 97, 97, 0.781);
 }
 
-#affichageBillet > time
+.titreListeBilletAccueil > h3
+{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    margin: 20px;
+}
+
+.affichageBillet > time
 {
     font-weight: bold;
 }
@@ -109,21 +116,21 @@ h1
     /* BILLET */
     /*////////*/
 
-#billetArticle > h3
+.billetArticle > h3
 {
     font-size: 50px;
     margin-bottom: 50px;
 
 }
 
-#billetArticle
+.billetArticle
 {
     font-size: 40px;
     text-align: center;
     text-decoration: underline;
 }
 
-#datePubliBilletVueBillet time
+.datePubliBilletVueBillet time
 {
     display:block;
     color: white;
@@ -135,27 +142,33 @@ h1
     border-radius: 10px;
 }
 
-#titreCommentairesVueBillet
+.titreCommentairesVueBillet
 {
     font-size: 30px;
     text-decoration: underline;
 }
 
-#caseCommentaireVueBillet > span
+.comment-block > span
 {
     font-weight: bold;
 }
 
-#contenuCom
+.contenuCom
 {
     margin: 5px;
 }
 
-#caseCommentaireVueBillet
+.comment-block
 {
     background-color: white;
     padding: 7px;
+    padding-bottom: 0;
     border-radius: 10px;
+}
+
+.separateurCommentaire
+{
+    border: 1px solid #dddddd;
 }
 
 #txtCommentaire
@@ -163,47 +176,70 @@ h1
     width: 45%;
 }
 
-    /*///////*/
-    /* ADMIN */
-    /*///////*/
+    /*///////////*/
+    /* CONNEXION */
+    /*///////////*/
 
-#titreAdmin > h3
+    /*///////////////*/
+    /* ADMIN ACCUEIL */
+    /*///////////////*/
+
+.separateurAdmin
+{
+    border: 1px solid white;
+    border-radius:10px;
+    margin: 50px;
+}
+
+.titreAdmin > h3
 {
     font-size: 50px;
     text-align: center;
     text-transform: uppercase;
 }
 
-#adminMessage > p
+.adminMessage > p
 {
     font-size: 17px;
-    margin-left:25px;
+    margin-top: 25px;
+    margin-left: 10px;
 }
 
-#adminControl
+.adminControl
 {
     font-size: 20px;
     display: flex;
     background-color: white;
     border-radius: 10px;
     padding: 10px;
-    margin: 20px;
+    margin: 5px;
     align-self: center;
     justify-content: space-between
 }
 
-#adminControl > p > span
+.adminControl > p
+{
+    margin: 0px;
+}
+
+.adminControl > p > span
 {
     text-transform: uppercase;
 }
 
-#titreOption
+.titreParties
 {
     text-align: center;
     font-size: 30px;
+    Margin-top: 50px;
 }
 
-#MenuAdmin > a > h5
+.MenuAdmin
+{
+    margin-top: 50px;
+}
+
+.MenuAdmin > a > h5
 {
     text-align: center;
     margin: 5px;
@@ -211,20 +247,88 @@ h1
     font-size: 25px;
     background-color: white;
     border-radius : 10px;
-
 }
 
-    /*/////////////////////*/
-    /* ADMIN NOUVEAU POSTE */
-    /*/////////////////////*/
-
-#ajouterUnbillet >h4
+.affichageTousLesBillets
 {
-    font-size: 30px;
+    margin: 5px;
+    margin-top: 50px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+}
+
+.affichageBilletAdmin
+{
+    border: 3px solid rgba(68, 68, 68, 0.918);
+    border-radius: 10px;
+    background-color: rgba(97, 97, 97, 0.781);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    padding: 5px;
+    right: 0;
+    left:0;
+}
+
+
+.blockTxt > h3
+{
+    color: rgba(255, 255, 255, 0.904);
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.blockTxt > time
+{
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.affichageBilletAdmin > .blockBoutons
+{
+    margin-left: auto;
+    align-self: center;
+    padding: 20px;
+}
+
+.affichageBilletAdmin > .blockBoutons > a , button
+{
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+}
+
+.affichageBilletAdmin > .blockBoutons > button
+{
+    color: red;
+}
+
+.titreBilletAdmin
+{
+    text-shadow:  1px 1px 1px 1px black;
+}
+
+.affichageBilletAdmin > .blockBoutons > button:hover
+{
+    text-decoration: underline;
+}
+
+    /*///////////////*/
+    /* ADMIN PUBLIER */
+    /*///////////////*/
+
+.formPublication > h4
+{
+    font-size: 25px;
     text-decoration: underline
 }
 
-#titreNouveauBillet
+.titreNouveauBillet
 {
     width: 35%;
     height: 30px;
@@ -232,14 +336,14 @@ h1
     margin: auto;
 }
 
-#txtNouveauBillet
+.txtNouveauBillet
 {
     width: 80%;
     display: block;
     margin: auto;
 }
 
-#publierNouveauBillet
+.publierNouveauBillet
 {
     width: 20%;
     height: 30px;
@@ -247,72 +351,37 @@ h1
     margin: auto;
 }
 
-    /*/////////////////////////*/
-    /* ADMIN MODIFIER CHAPITRE */
-    /*/////////////////////////*/
 
-#modifierUnbillet
-{
-    font-size: 30px;
-}
 
-#modifierUnbillet > h4
+    /*//////////////*/
+    /* ADMIN EDITER */
+    /*//////////////*/
+
+.formPublication > h4
 {
     font-size: 25px;
     text-decoration: underline
 }
 
-#listeBilletAdmin
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#affichageBilletAdmin > h3
-{
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-#affichageBilletAdmin > time
-{
-    font-size: 20px;
-    font-weight: bold;
-}
-
-
-
-#titreDuChapitreMAJ
-{
-    color: white;
-    border: 2px solid white;
-    background-color: #717573;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 20px;
-}
-
-#modifierTitre
+.titre
 {
     width: 35%;
-    height: 40px;
+    height: 30px;
     display: block;
     margin: auto;
 }
 
-#modifierTexte
+.txt
 {
     width: 80%;
     display: block;
     margin: auto;
 }
 
-#updateChapitre
+.editerBillet
 {
-    width: 30%;
-    height: 50px;
+    width: 20%;
+    height: 30px;
     display: block;
     margin: auto;
 }

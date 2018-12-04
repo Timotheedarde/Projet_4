@@ -5,20 +5,20 @@
     </head>
     
     <body>
-        <div id="global">
+        <div class="global">
             <nav class="navbar navbar-inverse">
                 <?php include("Vue/includes/nav.php"); ?>
             </nav>
             
-            <div id="contenu">
+            <div class="contenu">
                 <?= $contenu ?>
             </div> <!-- #contenu -->
-            <footer id="piedBlog">
+            <footer class="piedBlog">
                 <?php include("Vue/includes/footer.php"); ?>
             </footer>
         </div> <!-- #global -->
     </body>
-    <div id="script">
+    <div class="script">
         <?php include("Vue/includes/script.php"); ?>
     </div>
 </html>

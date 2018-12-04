@@ -8,8 +8,8 @@ use Framework\Modele;
 ///////////////////////////////////////////
 
 class Billet extends Modele {
-    /* Renvoie la liste des billets du blog
-     - @return PDOStatement La liste des billets
+    /** Renvoie la liste des billets du blog
+     * @return PDOStatement La liste des billets
     */
     public function getBillets() {
         $sql = 'select BIL_ID as id, BIL_DATE as date,'
@@ -19,10 +19,10 @@ class Billet extends Modele {
         return $billets;
     }
     
-    /* Renvoie les informations sur un billet
-     - @param int $id L'identifiant du billet
-     - @return array Le billet
-     - @throws Exception Si l'identifiant du billet est inconnu
+    /** Renvoie les informations sur un billet
+     * @param int $id L'identifiant du billet
+     * @return array Le billet
+     * @throws Exception Si l'identifiant du billet est inconnu
     */
     public function getBillet($idBillet) {
         $sql = 'select BIL_ID as id, BIL_DATE as date,'
@@ -35,7 +35,7 @@ class Billet extends Modele {
             throw new \Exception("Aucun billet ne correspond à l'identifiant '$idBillet'");
     }
     
-    //Ajouter un billet à la BDD
+    // Ajouter un billet à la BDD
     public function ajouterBillet($titre, $contenu) {
         $sql = 'insert into T_BILLET(BIL_DATE, BIL_TITRE, BIL_CONTENU)'
             . ' values(?, ?, ?)';
@@ -43,8 +43,19 @@ class Billet extends Modele {
         $this->executerRequete($sql, array($date, $titre, $contenu));
     }
 
-    /* Renvoie le nombre total de billets
-     - @return int Le nombre de billets
+    // Mettre à jour un billet ****
+    public function updateBillet() {
+
+    }
+
+    // Supprimer un billet ****
+    public function supprimerBillet($idbillet) {
+        $sql = 'delete from T_BILLET where BIL_ID=?';
+        $this->executerRequete($sql);
+    }
+
+    /** Renvoie le nombre total de billets
+     * @return int Le nombre de billets
     */
     public function getNombreBillets(){
         $sql = 'select count(*) as nbBillets from T_BILLET';

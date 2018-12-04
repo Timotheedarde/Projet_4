@@ -15,9 +15,9 @@ class Vue
     private $titre;
 
     // CONSTRUCTEUR
-    /* 
-    - @param string $action Action à laquelle la vue est associée
-    - @param string $controleur Nom du contrôleur auquel la vue est associée 
+    /** 
+    * @param string $action Action à laquelle la vue est associée
+    * @param string $controleur Nom du contrôleur auquel la vue est associée 
     */
     public function __construct($action, $controleur = "")
     {
@@ -31,13 +31,17 @@ class Vue
     }
 
     // Génère et affiche la vue
-    /*
-     - @param array $donnees Données nécessaires à la génération de la vue
+    /**
+     * @param array $donnees Données nécessaires à la génération de la vue
     */
-    public function generer($donnees)
+    public function generer($donnees, $useGabarit = true)
     {
         // Génération de la partie spécifique de la vue
         $contenu = $this->genererFichier($this->fichier, $donnees);
+        if($useGabarit === false){
+            echo $contenu;
+            return;
+        }
         // On définit une variable locale accessible par la vue pour la racine Web
         // Il s'agit du chemin vers le site sur le serveur Web
         // Nécessaire pour les URL de type controleur/action/id
@@ -50,11 +54,11 @@ class Vue
     }
 
     // Génère un fichier vue et renvoie le résultat produit
-    /*
-     - @param string $fichier Chemin du fichier vue à générer
-     - @param array $donnees Données nécessaires à la génération de la vue
-     - @return string Résultat de la génération de la vue
-     - @throws Exception Si le fichier vue est introuvable
+    /**
+     * @param string $fichier Chemin du fichier vue à générer
+     * @param array $donnees Données nécessaires à la génération de la vue
+     * @return string Résultat de la génération de la vue
+     * @throws \Exception Si le fichier vue est introuvable
     */
     private function genererFichier($fichier, $donnees)
     {
@@ -75,11 +79,11 @@ class Vue
     }
     
     // Nettoie une valeur insérée dans une page HTML
-    /*
-    Doit être utilisée à chaque insertion de données dynamique dans une vue
-    Permet d'éviter les problèmes d'exécution de code indésirable (XSS) dans les vues générées
-     - @param string $valeur Valeur à nettoyer
-     - @return string Valeur nettoyée
+    /**
+    *Doit être utilisée à chaque insertion de données dynamique dans une vue
+    *Permet d'éviter les problèmes d'exécution de code indésirable (XSS) dans les vues générées
+     * @param string $valeur Valeur à nettoyer
+     * @return string Valeur nettoyée
     */
     private function nettoyer($valeur)
     {

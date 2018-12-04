@@ -11,15 +11,15 @@ use Framework\Configuration;
 
 abstract class Modele
 {
-    /* Objet PDO d'accès à la BD 
-     Statique donc partagé par toutes les instances des classes dérivées 
+    /** Objet PDO d'accès à la BD 
+     * Statique donc partagé par toutes les instances des classes dérivées 
     */
     private static $bdd;
 
-    /* Exécute une requête SQL
-     - @param string $sql Requête SQL
-     - @param array $params Paramètres de la requête
-     - @return PDOStatement Résultats de la requête
+    /** Exécute une requête SQL
+     * @param string $sql Requête SQL
+     * @param array $params Paramètres de la requête
+     * @return PDOStatement Résultats de la requête
     */
     protected function executerRequete($sql, $params = null)
     {
@@ -33,8 +33,14 @@ abstract class Modele
         return $resultat;
     }
 
-    /* Renvoie un objet de connexion à la BDD en initialisant la connexion au besoin
-     * @return PDO Objet PDO de connexion à la BDD
+    protected function getLastInsertId()
+    {
+        return self::getBdd()->lastInsertId();
+    }
+
+    /** 
+     * Renvoie un objet de connexion à la BDD en initialisant la connexion au besoin
+     * @return \PDO Objet PDO de connexion à la BDD
     */
     private static function getBdd()
     {
