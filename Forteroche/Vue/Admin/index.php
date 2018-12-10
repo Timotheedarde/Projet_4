@@ -32,9 +32,8 @@
             <time>Date de publication: <?= $this->nettoyer($billet['date']) ?></time>
         </div>
         <div class="blockBoutons">
-            <a class="glyphicon glyphicon-pencil"  aria-hidden="true" method="get" href="admin/update"></a>
-            <input id="articleId" type="hidden" name="id" value="<?= $billet['id'] ?>" />
-            <button class="glyphicon glyphicon-remove"  aria-hidden="true" method="get" action="admin/delete"></button>
+            <a class="glyphicon glyphicon-pencil" href="<?= "admin/update/" .  $this->nettoyer($billet['id']) ?>"  aria-hidden="true" method="get" href="admin/update"></a>
+            <button class="supprimerBillet" data-id="<?= $this->nettoyer($billet['id']) ?>"><i class="fas fa-times"></i></button>
         </div>
     </div>
     <?php endforeach; ?>

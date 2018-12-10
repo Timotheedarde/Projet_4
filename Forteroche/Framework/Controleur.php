@@ -18,7 +18,7 @@ abstract class Controleur
     protected $requete;
 
     /** Définit la requête entrante
-     * @param Requete $requete Requete entrante
+     * @param Requete$requete Requete entrante
     */
     public function setRequete(Requete $requete)
     {
@@ -47,8 +47,8 @@ abstract class Controleur
     public abstract function index();
 
     /** Génère la vue associée au contrôleur courant
-     * @param array $donneesVue Données nécessaires pour la génération de la vue
-     * @param string $action Action associée à la vue (permet à un contrôleur de générer une vue pour une action spécifique)
+     * @param array$donneesVue Données nécessaires pour la génération de la vue
+     * @param string$action Action associée à la vue (permet à un contrôleur de générer une vue pour une action spécifique)
     */
     protected function genererVue($donneesVue = array(), $action = null, $useGabarit = true)
     {
@@ -67,8 +67,8 @@ abstract class Controleur
     }
 
     /** Effectue une redirection vers un contrôleur et une action spécifiques
-     * @param string $controleur Contrôleur
-     * @param type $action Action Action
+     * @param string$controleur Contrôleur
+     * @param type$action Action Action
     */
     protected function rediriger($controleur, $action = null)
     {

@@ -16,16 +16,11 @@
 <article>
     <div class="commentaireArticle">
         <h3 class="titreCommentairesVueBillet">Commentaires du <?= $this->nettoyer($billet['titre']) ?></h3>
-        <div class="comment-block">
+        <div class="affichageCommentaireBillet">
             <?php foreach ($commentaires as $commentaire): 
                 require ('commenter.php');
             endforeach; ?>
         </div>
-    </div>
-
-
-    <div id="resultat">
-        <!--  retour en jQuery au visiteur sur ajout du com -->
     </div>
 
     <div class= "commentaireForm">

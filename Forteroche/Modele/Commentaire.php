@@ -8,20 +8,41 @@ use Framework\Modele;
 ///////////////////////////////////////////////
 
 class Commentaire extends Modele {
+    /** Renvoie la liste des commentaires du blog
+    * @return PDOStatement La liste des commentaires
+    */
+    public function getListeCommentaires() {
+        $sql = 'select com_id as id, com_date as date,'
+                . ' com_auteur as auteur, com_contenu as contenu from t_commentaire'
+                . ' order by com_id desc';
+        $liste_commentaires = $this->executerRequete($sql, array());
+        return $liste_commentaires;
+    }
+    
     // Renvoie la liste des commentaires associés à un billet
     public function getCommentaires($idBillet) {
-        $sql = 'select COM_ID as id, COM_DATE as date,'
-                . ' COM_AUTEUR as auteur, COM_CONTENU as contenu from T_COMMENTAIRE'
-                . ' where BIL_ID=?';
+        $sql = 'select com_id as id, com_date as date,'
+                . ' com_auteur as auteur, com_contenu as contenu from t_commentaire'
+                . ' where bil_id=?';
         $commentaires = $this->executerRequete($sql, array($idBillet));
 
         return $commentaires;
     }
 
+    // Renvoi la liste des commentaires signalés 
+    public function getReportCommentaires(){
+        $sql = 'select com_id as id, com_date as date,'
+                . ' com_auteur as auteur, com_contenu as contenu, bil_id as idBillet from t_commentaire'
+                . ' where com_report = 1';
+        $report_commentaires = $this->executerRequete($sql, array());
+
+        return $report_commentaires;
+    }
+
     // ajout d'un commentaire
     public function ajouterCommentaire($auteur, $contenu, $idBillet) {
-        $sql = 'insert into T_COMMENTAIRE(COM_DATE, COM_AUTEUR, COM_CONTENU, BIL_ID)'
-            . ' values(?, ?, ?, ?)';
+        $sql = 'insert into t_commentaire(com_date, com_auteur, com_contenu, com_report, bil_id)'
+            . ' values(?, ?, ?, 0, ?)';
         $date = date('Y-m-d H:i:s'); //format de la date
         $this->executerRequete($sql, array($date, $auteur, $contenu, $idBillet));
 
@@ -33,27 +54,16 @@ class Commentaire extends Modele {
         ];
     }
 
-    // Signalement d'un commentaire ****
-    public function reportCommentaire() {
-        $sql = 'update T_COMMENTAIRE(COM_REPORT)'. ' values(1)';
-        $this->executerRequete($sql, array($report));
+    // Signalement d'un commentaire 
+    public function reportCommentaire($id) {
+        $sql = 'update t_commentaire set com_report = 1 where com_id = ?';
+        $this->executerRequete($sql, array($id));
     }
 
-    // Renvoi la liste des commentaires signalés ****
-    public function getReportCommentaires(){
-        $sql = 'select COM_ID as id, COM_DATE as date,'
-                . ' COM_AUTEUR as auteur, COM_CONTENU as contenu from T_COMMENTAIRE'
-                . ' where COM_REPORT=TRUE';
-        $commentaires = $this->executerRequete();
-
-        return $commentaires;
-    }
-
-    // Supprimer un commentaire ****
-    public function supprimerCommentaire($auteur, $contenu, $idBillet){
-            $sql = 'delete from T_COMMENTAIRE(COM_DATE, COM_AUTEUR, COM_CONTENU, BIL_ID)'
-                . ' values(?, ?, ?, ?)';
-            $this->executerRequete();
+    // Supprimer un commentaire
+    public function supprimerCommentaire($id){
+            $sql = 'delete from t_commentaire where com_id = ?';
+            $this->executerRequete($sql, array($id));
     }
     
     /** Renvoie le nombre total de commentaires
@@ -61,7 +71,7 @@ class Commentaire extends Modele {
     */
     public function getNombreCommentaires()
     {
-        $sql = 'select count(*) as nbCommentaires from T_COMMENTAIRE';
+        $sql = 'select count(*) as nbCommentaires from t_commentaire';
         $resultat = $this->executerRequete($sql);
         $ligne = $resultat->fetch();  // Le résultat comporte toujours 1 ligne
 

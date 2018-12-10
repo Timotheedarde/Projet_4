@@ -19,7 +19,7 @@ abstract class Modele
     /** Exécute une requête SQL
      * @param string $sql Requête SQL
      * @param array $params Paramètres de la requête
-     * @return PDOStatement Résultats de la requête
+     * @return \PDOStatement Résultats de la requête
     */
     protected function executerRequete($sql, $params = null)
     {

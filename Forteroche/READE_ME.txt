@@ -10,6 +10,8 @@ a faire:
 
 - fonction lecture et supression de commentaire signalés dans l'espace d'admin
 
+- Voir Faille CSRF!! protection 
+
 
 comment faire:
 

@@ -23,47 +23,75 @@ class ControleurAdmin extends ControleurSecurise
     }
     public function index()
     {
+        $idBillet = $this->requete->getParametre("id");
         $billets = $this->billet->getBillets();
         $nbBillets = $this->billet->getNombreBillets();
+        $commentaires = $this->commentaire->getCommentaires($idBillet);
         $nbCommentaires = $this->commentaire->getNombreCommentaires();
         $login = $this->requete->getSession()->getAttribut("login");
-        $this->genererVue(array('billets' => $billets, 'nbBillets' => $nbBillets, 'nbCommentaires' => $nbCommentaires, 'login' => $login));
+        $this->genererVue(array('billets' => $billets, 'nbBillets' => $nbBillets,'commentaires' => $commentaires, 'nbCommentaires' => $nbCommentaires, 'login' => $login));
     }
 
     // Ajoute nouveau billet
     public function publier() {
+        $billets = $this->billet->getBillets();
         $titre = $this->requete->getParametre("titre");
         $contenu = $this->requete->getParametre("contenu");
         if(!empty($titre) && !empty($contenu)){
             $this->billet->ajouterBillet($titre, $contenu);
             // Exécution de l'action par défaut pour réafficher la liste des billets
             $this->rediriger('admin');
+
         }
         $this->generervue();
     }
 
-    // Mise à jour d'un billet ****
+    // Affichage d'un billet dans un Form pour MAJ
     public function update(){
-        $titre = $this->requete->getParametre($titre);
-        $contenu = $this->requete->getParametre($contenu);
+        $idBillet = $this->requete->getParametre("id");
+        $billets = $this->billet->getBillets();
+        $billet = $this->billet->getBillet($idBillet);
         
-        
-        $this->generervue();
+        $this->genererVue(array('billets' => $billets, 'billet' => $billet));
     }
 
-    // Suppression d'un billet ****
-    public function delete(){
-        $id = $this->requete->getParametre($id);
-        $this->id->supprimerBillet('id');
+    // Mettre à jour un billet existant
+    public function MAJBillet(){
+        $billets = $this->billet->getBillets();
+        $titre = $this->requete->getParametre("titre");
+        $contenu = $this->requete->getParametre("contenu");
+        if(!empty($titre) && !empty($contenu)){
+            $this->billet->MAJBillet($titre, $contenu);
+            // Exécution de l'action par défaut pour réafficher la liste des billets
+            $this->rediriger('admin');
+
+        }
+        $this->generervue();
+
+        
+    }
+
+    // Suppression d'un billet 
+    public function deleteBillet(){
+        $billet = $this->requete->getParametre("id");
+        $this->billet->supprimerBillet($billet);
         $this->rediriger('admin');
-        $this->generervue();
+        $this-> genererVue(['billet' => $billet ], null, false);
     }
 
-    // Moderation (suppression de commentaire) ****
+    // Moderation des commentaires (affichage des commentaires)
     public function moderer() {
+        $idBillet = $this->requete->getParametre("id");
+        $commentaires = $this->commentaire->getCommentaires($idBillet);
+        $report_commentaires = $this->commentaire->getReportCommentaires();
+        $liste_commentaires = $this->commentaire->getListeCommentaires();
 
-        $this->generervue();
+        $this->genererVue(array('commentaires' => $commentaires, 'report_commentaires' => $report_commentaires, 'liste_commentaires' => $liste_commentaires));
     }
-        
 
+    // Suppression des commentaires 
+    public function deleteCom(){
+        $commentaire = $this->requete->getParametre("id");
+        $this->commentaire->supprimerCommentaire($commentaire);
+    }
 }

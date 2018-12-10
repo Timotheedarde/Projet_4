@@ -116,6 +116,8 @@ h1
     /* BILLET */
     /*////////*/
 
+    /* PARTIE BILLET */
+
 .billetArticle > h3
 {
     font-size: 50px;
@@ -148,17 +150,14 @@ h1
     text-decoration: underline;
 }
 
-.comment-block > span
+#txtCommentaire
 {
-    font-weight: bold;
+    width: 45%;
 }
 
-.contenuCom
-{
-    margin: 5px;
-}
+    /* PARTIE COMMENTER */
 
-.comment-block
+.affichageCommentaireBillet
 {
     background-color: white;
     padding: 7px;
@@ -166,15 +165,54 @@ h1
     border-radius: 10px;
 }
 
+.comment-block
+{
+    display:flex;
+    padding-left: 5px;
+    padding-right: 5px;
+    right: 0;
+    left:0;
+}
+
+.comment-block > .blocTxtCommenter > span
+{
+    font-weight: bold;
+}
+
+.comment-block > .blocTxtCommenter > .contenuCom
+{
+    margin: 5px;
+}
+
+.comment-block > .blocBoutonCommenter 
+{
+    margin-left: auto;
+    align-self: center;
+    padding: 10px;
+}
+
+.comment-block > .blocBoutonCommenter > button:hover
+{
+    text-decoration: underline;
+    background-color: red;
+    font-weight: bold;
+    color: white;
+}
+
+
+
 .separateurCommentaire
 {
     border: 1px solid #dddddd;
 }
 
-#txtCommentaire
+.boutonSignaler
 {
-    width: 45%;
+    font-size: 12px;
+    padding: 5px;
 }
+
+
 
     /*///////////*/
     /* CONNEXION */
@@ -294,18 +332,32 @@ h1
     padding: 20px;
 }
 
-.affichageBilletAdmin > .blockBoutons > a , button
+.affichageBilletAdmin > .blockBoutons > a 
 {
     font-size: 20px;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px;
+    padding-top: 6px;
+    padding-bottom: 5px;
+    padding-right: 6px;
+    padding-left: 6px;
     background-color: white;
 }
 
 .affichageBilletAdmin > .blockBoutons > button
 {
     color: red;
+    align-self: center;
+    padding: 0;
+    border: 0;
+}
+
+.affichageBilletAdmin > .blockBoutons > button > i
+{
+    font-size:25px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 6px;
+    padding-left: 6px;
+    background-color: white;
 }
 
 .titreBilletAdmin
@@ -313,7 +365,7 @@ h1
     text-shadow:  1px 1px 1px 1px black;
 }
 
-.affichageBilletAdmin > .blockBoutons > button:hover
+.affichageBilletAdmin > .blockBoutons > button> i:hover
 {
     text-decoration: underline;
 }
@@ -390,17 +442,109 @@ h1
     /* ADMIN MODERATION */
     /*//////////////////*/
 
-#gestionCommentaire
-{
-    background-color: white;
-    padding: 15px;
-    margin:auto;
-    border-radius: 10px;
-}
+    /*SECTION COM SIGNALER*/
 
-#SupprimerUnCommentaire >h4
+#listReportComment > h4
 {
     font-size: 25px;
     text-decoration: underline
 }
 
+#listReportComment > .affichageComModerate > .blocTxtComModerate > span
+{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#listReportComment > .affichageComModerate
+{
+    border: 3px solid rgba(192, 0, 0, 0.918);
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    margin-right: 30%;
+    margin-left:0;
+    padding: 5px;
+}
+
+#listReportComment > .affichageComModerate > .blocButtonComModerate
+{
+    margin-left: auto;
+    padding-left: 25px;
+    padding-right:25px;
+    align-self: center;
+}
+
+#listReportComment > .affichageComModerate > .blocButtonComModerate > button > i
+{
+    font-size: 20px;
+    color: red;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 6px;
+    padding-left: 6px;
+}
+
+
+#listReportComment > .affichageComModerate > .blocButtonComModerate > button > i:hover
+{
+    text-decoration: underline;
+}
+
+#listReportComment > h4
+{
+    font-size: 25px;
+    text-decoration: underline
+}
+
+    /*SECTION ALL COMMENT*/
+
+#ListAllComment > h4
+{
+    font-size: 25px;
+    text-decoration: underline
+}
+
+#ListAllComment > .affichageAllCom > .blocTxtComList > span
+{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#ListAllComment > .affichageAllCom
+{
+    border: 3px solid rgba(68, 68, 68, 0.918);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    margin-right: 30%;
+    margin-left:0;
+    padding: 5px;
+}
+
+#ListAllComment > .affichageAllCom > .blocButtonComList
+{
+    margin-left: auto;
+    padding-left: 25px;
+    padding-right:25px;
+    align-self: center;
+}
+
+#ListAllComment > .affichageAllCom > .blocButtonComList > button > i
+{
+    font-size: 20px;
+    color: red;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 6px;
+    padding-left: 6px;
+}
+
+#ListAllComment > .affichageAllCom > .blocButtonComList > button > i:hover
+{
+    text-decoration: underline;
+}

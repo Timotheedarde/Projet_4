@@ -1,6 +1,5 @@
 // ajouter un commentaire par JS (permet d'éviter de recharger la page inutilement)
-$('.commentaireForm').submit(function(event){
-    event.preventDefault();
+$('.commentaireForm').submit(function(){
     $.ajax({
         url: '/Forteroche/billet/commenter',
         type: 'POST',
@@ -11,7 +10,7 @@ $('.commentaireForm').submit(function(event){
         }
     }).done(function(data) {
         // fonction appelée après la requète ajax
-            $('.comment-block').append(data);
+            $('.affichageCommentaireBillet').append(data);
             $('.commentaireForm')[1].reset();
     });
     return false;

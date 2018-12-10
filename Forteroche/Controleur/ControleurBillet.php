@@ -41,12 +41,9 @@ class ControleurBillet extends Controleur {
         $this-> genererVue(['commentaire' => $commentaire ], null, false);
     }
 
-    // Signaler un commentaire sur un billet ****
+    // Signaler un commentaire sur un billet 
     public function signaler() {
-        $report = $this->requete->getParametre("report");
-        
-        $this->commentaire->reportCommentaire($report);
-        // Exécution de l'action par défaut pour réafficher la liste des billets
-        $this-> genererVue(['commentaire' => $commentaire ], null, false);
+        $com_report = $this->requete->getParametre("id");
+        $this->commentaire->reportCommentaire($com_report);
     }
 }

@@ -1,14 +1,14 @@
-// signaler un commentaire par JS
-$('.boutonSignaler').click(function(event){
+// supprimer un billet par JS 
+$('.supprimerBillet').click(function(event){
     event.preventDefault();
     $.ajax({
-        url: '/Forteroche/billet/signaler',
+        url: '/Forteroche/admin/deleteBillet',
         type: 'POST',
         data: {
             id: $(this).data("id")
         }
     }).done(function() {
         // fonction appelée après la requète ajax
-        alert('Vous avez signaler ce commentaire !');
+        alert('Vous avez supprimé le chapitre !');
     });
 });

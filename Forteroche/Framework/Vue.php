@@ -55,8 +55,8 @@ class Vue
 
     // Génère un fichier vue et renvoie le résultat produit
     /**
-     * @param string $fichier Chemin du fichier vue à générer
-     * @param array $donnees Données nécessaires à la génération de la vue
+     * @param string$fichier Chemin du fichier vue à générer
+     * @param array$donnees Données nécessaires à la génération de la vue
      * @return string Résultat de la génération de la vue
      * @throws \Exception Si le fichier vue est introuvable
     */
