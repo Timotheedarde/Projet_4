@@ -65,6 +65,12 @@ class Commentaire extends Modele {
             $sql = 'delete from t_commentaire where com_id = ?';
             $this->executerRequete($sql, array($id));
     }
+
+    // Supprimer tous les commentaires lié à un billet ****
+    public function supprimerCommentairesBillet($idBillet){
+        $sql = 'delete from t_commentaire where bil_id = ?';
+        $this->executerRequete($sql, array($idBillet));
+    }
     
     /** Renvoie le nombre total de commentaires
      * @return int Le nombre de commentaires

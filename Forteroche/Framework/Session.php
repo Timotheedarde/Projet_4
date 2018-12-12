@@ -23,8 +23,8 @@ class Session
     }
 
     /** Ajoute un attribut à la session
-     * @param string $nom Nom de l'attribut
-     * @param string $valeur Valeur de l'attribut
+     * @param string$nom Nom de l'attribut
+     * @param string$valeur Valeur de l'attribut
     */
     public function setAttribut($nom, $valeur)
     {
@@ -32,7 +32,7 @@ class Session
     }
 
     /** Renvoie vrai si l'attribut existe dans la session
-     * @param string $nom Nom de l'attribut
+     * @param string$nom Nom de l'attribut
      * @return bool Vrai si l'attribut existe et sa valeur n'est pas vide 
     */
     public function existeAttribut($nom)

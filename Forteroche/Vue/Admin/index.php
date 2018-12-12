@@ -18,7 +18,8 @@
 <h4 class="titreParties">Options d'administration</h4>
 <section class="MenuAdmin">
     <a href= "admin/publier"><h5>Ajouter un chapitre</h5></a>
-    <a href="admin/moderer"><h5>Modération des commentaires</h5></a>
+    <a href="admin/moderer"><h5>Commentaires Signalés</h5></a>
+    <a href="admin/commentaires"><h5>Voir tous les commentaires</h5></a>
 </section>
 
 <hr class="separateurAdmin"/>

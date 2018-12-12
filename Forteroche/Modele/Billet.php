@@ -44,9 +44,10 @@ class Billet extends Modele {
     }
 
     // Mettre à jour un billet ****
-    public function MAJBillet($titre, $contenu) {
-        $sql = 'update t_billet set bil_titre, bil_contenu where bil_id = ?';
-        $this->executerRequete($sql, array($titre, $contenu));
+    public function MAJBillet($idBillet, $titre, $contenu) {
+        $sql = 'update t_billet set bil_titre = ?, bil_contenu = ? where bil_id = ?';
+
+        $this->executerRequete($sql, array($titre, $contenu, $idBillet));
     }
 
     // Supprimer un billet

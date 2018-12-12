@@ -3,4 +3,5 @@
 <script src="public/js/AdCom.js"></script>
 <script src="public/js/ReportCom.js"></script>
 <script src="public/js/DeleteCom.js"></script>
+<script src="public/js/DeleteComReport.js"></script>
 <script src="public/js/DeleteBillet.js"></script>

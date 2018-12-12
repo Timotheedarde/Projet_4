@@ -1,5 +1,5 @@
-// supprimer un commentaire via JS 
-$('.supprimerCom').click(function(event){
+// supprimer un commentaire signalé via JS 
+$('.supprimerComReport').click(function(event){
     event.preventDefault();
     var button = $(this);
 
@@ -8,14 +8,14 @@ $('.supprimerCom').click(function(event){
     }
 
     $.ajax({
-        url: '/Forteroche/admin/deleteCom',
+        url: '/Forteroche/admin/deleteComReport',
         type: 'POST',
         data: {
             id: button.data("id")
         }
     }).done(function() {
         // fonction appelée après la requète ajax
-        button.closest('.affichageAllCom').remove();
+        button.closest('.affichageComModerate').remove();
         alert('Vous avez supprimé le commmentaire !');
     });
 });
