@@ -1,24 +1,4 @@
-a faire:
+A prÃ©voir:
 
-- Cryptage mdp (à revoir)
-
-- espace admin : ajout et modification de billet
-
-- fonction de récuperation de commentaire signalés en JS (Ajax):
-	transformer le champs (par default null) REPORT_COM en true (ou 1) avec
-	evenement sur bouton 'signaler' 
-
-- fonction lecture et supression de commentaire signalés dans l'espace d'admin
-
-- Voir Faille CSRF!! protection 
-
-
-comment faire:
-
-- modifier billet (récuperer titre et contenu du poste dans zone de texte?) Methode Load?
-
-- ajout comm en Js, à vérifier car si rechargement de page après envoi d'un comm, renvoi du formulaire et comm se duplique
-
-- verifier function **** 
-
+- Cryptage mdp (Ã  revoir)
 
