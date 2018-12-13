@@ -66,9 +66,10 @@ class ControleurAdmin extends ControleurSecurise
     // Suppression d'un billet ****
     public function deleteBillet(){
         $billet = $this->requete->getParametre("id");
+        $idBillet = $this->requete->getParametre("id");
 
+        $this->commentaire->supprimerCommentairesBillet($idBillet);
         $this->billet->supprimerBillet($billet);
-        $this->billet->supprimerCommentairesBillet($billet);
         $this->rediriger('admin');
         $this-> genererVue(['billet' => $billet ], null, false);
     }
@@ -95,6 +96,12 @@ class ControleurAdmin extends ControleurSecurise
 
     // Suppression des commentaires 
     public function deleteCom(){
+        $commentaire = $this->requete->getParametre("id");
+
+        $this->commentaire->supprimerCommentaire($commentaire);
+    }
+
+    public function deleteComReport(){
         $commentaire = $this->requete->getParametre("id");
 
         $this->commentaire->supprimerCommentaire($commentaire);

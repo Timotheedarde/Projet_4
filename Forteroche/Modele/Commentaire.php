@@ -30,7 +30,7 @@ class Commentaire extends Modele {
     }
 
     // Renvoi la liste des commentaires signalés 
-    public function getReportCommentaires(){
+    public function getReportCommentaires() {
         $sql = 'select com_id as id, com_date as date,'
                 . ' com_auteur as auteur, com_contenu as contenu, bil_id as idBillet from t_commentaire'
                 . ' where com_report = 1';
@@ -65,11 +65,14 @@ class Commentaire extends Modele {
             $sql = 'delete from t_commentaire where com_id = ?';
             $this->executerRequete($sql, array($id));
     }
-
+    
     // Supprimer tous les commentaires lié à un billet ****
     public function supprimerCommentairesBillet($idBillet){
         $sql = 'delete from t_commentaire where bil_id = ?';
+        $commentaires = $this->executerRequete($sql, array($idBillet));
+        
         $this->executerRequete($sql, array($idBillet));
+        return $commentaires;
     }
     
     /** Renvoie le nombre total de commentaires

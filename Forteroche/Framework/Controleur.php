@@ -66,6 +66,8 @@ abstract class Controleur
         $vue->generer($donneesVue, $useGabarit);
     }
 
+    
+    
     /** Effectue une redirection vers un contrôleur et une action spécifiques
      * @param string$controleur Contrôleur
      * @param type$action Action Action

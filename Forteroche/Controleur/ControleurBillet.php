@@ -30,7 +30,7 @@ class ControleurBillet extends Controleur {
         $this->genererVue(array('billets' => $billets, 'billet' => $billet, 'commentaires' => $commentaires));
     }
 
-    // Ajoute un commentaire sur un billet ****
+    // Ajoute un commentaire sur un billet 
     public function commenter() {
         $idBillet = $this->requete->getParametre("id");
         $auteur = $this->requete->getParametre("auteur");
